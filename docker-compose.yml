@@ -1,0 +1,23 @@
+nginx:
+  build: ./nginx
+  ports:
+    - "5000:5000"
+  links:
+    - "app1:app1"
+    - "app2:app2"
+    - "app3:app3"
+
+app1:
+  build: ./webCrawler-Phantom
+  ports:
+   - "5000"
+
+app2:
+  build: ./webCrawler-Phantom
+  ports:
+   - "5000"
+
+app3:
+  build: ./webCrawler-Phantom
+  ports:
+   - "5000"
