@@ -209,6 +209,7 @@ def search_top(search_string, array, site):
                 element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[5]/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div")))
             finally:
+                addressInfo['type'] = 'redfin'
                 for var, xpath in varAndXPath.iteritems():
                     item = tryPath(xpath)
                     addressInfo[var] = item 
@@ -234,6 +235,7 @@ def search_top(search_string, array, site):
             sibling2 = bsObj.findAll("div", { "class" : "hdp-fact-ataglance-value" })
             
             return jsonify({
+                'type': 'zillow',
                 'estimate':estimate,
                 'rentEstimate':rentEstimate,
                 'beds': sibling1[0].get_text() if sibling1 else null,
