@@ -266,9 +266,7 @@ def getPrice():
         searchString+=word 
         searchString+="+"
         
-    exactAddress = getExactAddress(searchString)
-    #print exactAddress
-    getSurroundingValues(searchString)
+    
     
     redfinString="https://www.google.com/#q="+searchString +"redfin"
     zillowString="https://www.google.com/#q="+searchString +"zillow"
@@ -283,7 +281,8 @@ def getPrice():
             return(zresult)
         else:
             #value house from nearby houses
-            exactAddress = getExactAddress(searchString)
+            #exactAddress = getExactAddress(searchString)
+            return("Address Not Found")
             
             
            
