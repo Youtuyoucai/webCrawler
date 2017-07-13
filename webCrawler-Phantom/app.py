@@ -236,16 +236,16 @@ def search_top(search_string, array, site):
             return jsonify({
                 'estimate':estimate,
                 'rentEstimate':rentEstimate,
-                'beds': sibling1[0].get_text(),
-                'baths': sibling1[1].get_text(),
-                'sqft': sibling1[2].get_text(),
-                "yearBuilt": sibling2[1].get_text(),
-                "type": sibling2[0].get_text(),
-                "yearBuilt": sibling2[1].get_text(),
-                "Heating": sibling2[2].get_text(),
-                "Cooling": sibling2[3].get_text(),
-                "Parking": sibling2[4].get_text(),
-                "Lot": sibling2[5].get_text(),
+                'beds': sibling1[0].get_text() if sibling1 else null,
+                'baths':sibling1[1].get_text() if sibling1 else null,
+                'sqft': sibling1[2].get_text() if sibling1 else null,
+                "yearBuilt": sibling2[1].get_text() if sibling2 else null,
+                "type": sibling2[0].get_text() if sibling2 else null,
+                "yearBuilt": sibling2[1].get_text() if sibling2 else null,
+                "Heating": sibling2[2].get_text() if sibling2 else null,
+                "Cooling": sibling2[3].get_text() if sibling2 else null,
+                "Parking": sibling2[4].get_text() if sibling2 else null,
+                "Lot": sibling2[5].get_text() if sibling2 else null,
             })
    
     else: 
