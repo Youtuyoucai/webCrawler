@@ -38,28 +38,28 @@ varAndXPath = {
                 'beds':"//*[@id='basicInfo']/div[2]/div[1]/div[1]/div",
                 'baths':"//*[@id='basicInfo']/div[2]/div[1]/div[2]/div",
                 'finishedSqFt':"//*[@id='basicInfo']/div[2]/div[1]/div[3]/div",
-                'unfinishedSqFt':"//*[@id='basicInfo']/div[2]/div[1]/div[4]/div",
+                #'unfinishedSqFt':"//*[@id='basicInfo']/div[2]/div[1]/div[4]/div",
                 'totalSqFt':"//*[@id='basicInfo']/div[2]/div[1]/div[5]/div",
                 'floors':"//*[@id='basicInfo']/div[2]/div[1]/div[6]/div",
                 'lotSize':"//*[@id='basicInfo']/div[2]/div[1]/div[7]/div",
-                'style':"//*[@id='basicInfo']/div[2]/div[1]/div[7]/div",
+                #'style':"//*[@id='basicInfo']/div[2]/div[1]/div[7]/div",
                 'yearRenovated':"//*[@id='basicInfo']/div[2]/div[1]/div[10]/div",
                 'county':"//*[@id='basicInfo']/div[2]/div[1]/div[11]/div",
                 'apn':"//*[@id='basicInfo']/div[2]/div[1]/div[12]/div",
-                "units":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[1]/div[2]/div[1]/ul/div/li/span",
+                #"units":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[1]/div[2]/div[1]/ul/div/li/span",
                 "rooms":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[1]/div[2]/div[2]/ul/div/li/span",
-                "primaryGarageType":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[2]/div[2]/div[1]/ul/div/li[1]/span",
-                "parkingType":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[2]/div[2]/div[1]/ul/div/li[2]/span",
-                "structuralStyle":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/div/li[1]/span",
+                #"primaryGarageType":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[2]/div[2]/div[1]/ul/div/li[1]/span",
+                #"parkingType":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[2]/div[2]/div[1]/ul/div/li[2]/span",
+               # "structuralStyle":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/div/li[1]/span",
                 #"frameworkStructuralMaterial": "//*[@id='property-details-scroll']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/div/li[2]/span",
                 #"constructionQuality":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[1]/span",
                 #"buildingShape":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span",
                 #"lastLandAppraisal":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[2]/div[2]/div[3]/ul/div/li/span",
                 #"lotSize":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[3]/div[2]/div[1]/ul/div/li/span",
-                "buildingSqFt":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[3]/div[2]/div[2]/ul/div/li[1]/span",
+                #"buildingSqFt":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[3]/div[2]/div[2]/ul/div/li[1]/span",
                 #"totalStories":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[3]/div[2]/div[2]/ul/div/li[2]/span",
                 #"totalStructuralSqFt":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[3]/div[2]/div[2]/ul/div/li[2]/span",
-                "totalStructureDesc":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[3]/div[2]/div[2]/ul/li[2]/span",
+                #"totalStructureDesc":"//*[@id='property-details-scroll']/div/div[2]/div/div/div[3]/div[2]/div[2]/ul/li[2]/span",
                 #"allBuildingsOnPropertySqFt": "//*[@id='property-details-scroll']/div/div[2]/div/div/div[3]/div[2]/div[2]/ul/li[3]/span",
                 #"totalAssessorSqFt": "//*[@id='property-details-scroll']/div/div[2]/div/div/div[3]/div[2]/div[2]/ul/li[4]/span",
                 #"permittedRemodelYear": "//*[@id='property-details-scroll']/div/div[2]/div/div/div[3]/div[2]/div[2]/ul/li[5]/span",
@@ -120,7 +120,7 @@ def getSurroundingValues(searchString):
     print(redfinString)
     driver.get(redfinString)
     source = driver.page_source
-    bsObj = BeautifulSoup(source, "html.parser")
+    bsObj = BeautifulSoup(source, "lxml")
     #urls for nearby properties
     sibling = bsObj.findAll("h3", { "class" : "r" })
     
@@ -144,12 +144,13 @@ def getSurroundingValues(searchString):
                 break
 
     if correct_link == True:
+        print(link)
         print('correct')
         count = 0
         driver.get(link)
         #print('good link')
         source = driver.page_source
-        bsObj = BeautifulSoup(source, "html.parser")
+        bsObj = BeautifulSoup(source, "lxml")
         sibling = bsObj.findAll("a", { "class" : "nearby-home-address" })
         urls = []
         while count < 1:
@@ -175,7 +176,7 @@ def search_top(search_string, array, site):
     # In[2]:
 
     source = driver.page_source
-    bsObj = BeautifulSoup(source, "html.parser")
+    bsObj = BeautifulSoup(source, "lxml")
     
     sibling = bsObj.findAll("h3", { "class" : "r" })
     
@@ -200,7 +201,7 @@ def search_top(search_string, array, site):
         driver.get(link)
         #print('good link')
         source = driver.page_source
-        bsObj = BeautifulSoup(source, "html.parser")
+        bsObj = BeautifulSoup(source, "lxml")
 
         if site == 0:
             #redfin
@@ -234,7 +235,26 @@ def search_top(search_string, array, site):
             sibling1 = bsObj.findAll("span", { "class" : "addr_bbs" })
             sibling2 = bsObj.findAll("div", { "class" : "hdp-fact-ataglance-value" })
             
-            return jsonify({
+            history = []
+            sibling3 = bsObj.findAll("section", {"class" : "zsg-content-section"})
+            for item in sibling3:
+                item2 = item.find("div", {"id" : "hdp-price-history"})
+                if (item2):
+                    rows = item2.div.table.tbody.findAll("tr")
+                    for row in rows:
+                        info = row.findAll("td")
+                        history.append ({
+                            "date" : info[0].get_text(),
+                            "status" : info[1].get_text(),
+                            "price" : info[2].get_text()
+                        })
+                        
+                sibling4 = bsObj.findAll("section", {"id" : "nearbySchools"})
+                print sibling4
+                         
+                    
+            
+            addressInfo = {
                 'type': 'zillow',
                 'estimate':estimate,
                 'rentEstimate':rentEstimate,
@@ -248,14 +268,16 @@ def search_top(search_string, array, site):
                 "Cooling": sibling2[3].get_text() if sibling2 else null,
                 "Parking": sibling2[4].get_text() if sibling2 else null,
                 "Lot": sibling2[5].get_text() if sibling2 else null,
-            })
+                "History" : history
+            }
+            return jsonify(addressInfo)
    
     else: 
         #print('bad link')
         return False
 
 
-driver = webdriver.PhantomJS('./linux/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
+driver = webdriver.PhantomJS('./mac/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
 
 @app.route('/getinfo', methods=['POST'])
 def getPrice():
@@ -273,8 +295,8 @@ def getPrice():
     redfinString="https://www.google.com/#q="+searchString +"redfin"
     zillowString="https://www.google.com/#q="+searchString +"zillow"
     
-    
-    result = search_top(redfinString, array, 0)
+    result = search_top(zillowString, array, 1)
+    #result = search_top(redfinString, array, 0)
     if result != False:
         return(result)
     else:
