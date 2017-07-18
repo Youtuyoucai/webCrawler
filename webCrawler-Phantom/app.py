@@ -214,6 +214,8 @@ def search_top(search_string, array, site):
                 for var, xpath in varAndXPath.iteritems():
                     item = tryPath(xpath)
                     addressInfo[var] = item 
+                    
+                sibling5
                 
                 
                 return jsonify(addressInfo)
@@ -249,26 +251,46 @@ def search_top(search_string, array, site):
                             "price" : info[2].get_text()
                         })
                         
-                sibling4 = bsObj.findAll("section", {"id" : "nearbySchools"})
-                print sibling4
-                         
+            schools = []
+            sibling4 = bsObj.findAll("section", {"id" : "nearbySchools"})
+            for item in sibling4:
+                item2 = item.div.findAll("div", {"class" : "zsg-content-item"})
+                for content in item2:
+                    ul = content.findAll("ul", {"class" : "nearby-schools-list"})
+                    for lists in ul:
+                        listItems = lists.findAll("li", {"class":"nearby-school"})
+                        for listItem in listItems:
+                            rating = listItem.find("div", {"class":"nearby-schools-rating"}).span.get_text()
+                            name = listItem.find("div", {"class":"nearby-schools-name"}).a.get_text()
+                            grades = listItem.find("div", {"class":"nearby-schools-grades"}).get_text()
+                            distance = listItem.find("div", {"class":"nearby-schools-distance"}).get_text()
+                            schools.append({
+                                "name": name,
+                                "distance": distance,
+                                "grades": grades,
+                                "rating": rating
+                            })
+                            
+                        
+
                     
             
             addressInfo = {
                 'type': 'zillow',
                 'estimate':estimate,
                 'rentEstimate':rentEstimate,
-                'beds': sibling1[0].get_text() if sibling1 else null,
-                'baths':sibling1[1].get_text() if sibling1 else null,
-                'sqft': sibling1[2].get_text() if sibling1 else null,
-                "yearBuilt": sibling2[1].get_text() if sibling2 else null,
-                "type": sibling2[0].get_text() if sibling2 else null,
-                "yearBuilt": sibling2[1].get_text() if sibling2 else null,
-                "Heating": sibling2[2].get_text() if sibling2 else null,
-                "Cooling": sibling2[3].get_text() if sibling2 else null,
-                "Parking": sibling2[4].get_text() if sibling2 else null,
-                "Lot": sibling2[5].get_text() if sibling2 else null,
-                "History" : history
+                'beds': sibling1[0].get_text() if sibling1 else None,
+                'baths':sibling1[1].get_text() if sibling1 else None,
+                'sqft': sibling1[2].get_text() if sibling1 else None,
+                "yearBuilt": sibling2[1].get_text() if sibling2 else None,
+                "type": sibling2[0].get_text() if sibling2 else None,
+                "yearBuilt": sibling2[1].get_text() if sibling2 else None,
+                "Heating": sibling2[2].get_text() if sibling2 else None,
+                "Cooling": sibling2[3].get_text() if sibling2 else None,
+                "Parking": sibling2[4].get_text() if sibling2 else None,
+                "Lot": sibling2[5].get_text() if sibling2 else None,
+                "History" : history,
+                "Schools" : schools
             }
             return jsonify(addressInfo)
    
