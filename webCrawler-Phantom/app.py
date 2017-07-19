@@ -169,7 +169,7 @@ def search_top(search_string, array, site):
     
 
     # In[2]:
-
+    
     source = driver.page_source
     bsObj = BeautifulSoup(source, "lxml")
     
@@ -320,8 +320,8 @@ def getPrice():
     zillowString="https://www.google.com/#q="+searchString +"zillow"
     
     #result = search_top(zillowString, array, 1)
-    redfin = search_top(redfinString, array, 0)
     zillow = search_top(zillowString, array, 1)
+    redfin = search_top(redfinString, array, 0)
     if redfin:
         if zillow:
             redfin["History"] = zillow["History"]
