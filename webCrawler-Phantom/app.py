@@ -286,7 +286,7 @@ def search_top(search_string, array, site):
 driver = webdriver.PhantomJS('./linux/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
 
 @app.route('/getredfin', methods=['POST'])
-def getPrice():
+def getRedfin():
     address = request.json.get('address').lower()
     array = address.split()
     searchString = ""
@@ -300,7 +300,7 @@ def getPrice():
     return jsonify(redfinInfo)
 
 @app.route('/getzillow', methods=['POST'])
-def getPrice():
+def getZillow():
     address = request.json.get('address').lower()
     array = address.split()
     searchString = ""
