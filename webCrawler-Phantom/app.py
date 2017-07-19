@@ -313,7 +313,7 @@ def search_top(search_string, array, site):
         return False
 
 
-driver = webdriver.PhantomJS('./mac/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
+driver = webdriver.PhantomJS('./linux/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
 
 @app.route('/getinfo', methods=['POST'])
 def getPrice():
