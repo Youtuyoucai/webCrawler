@@ -253,11 +253,15 @@ def search_top(search_string, array, site):
                     rows = item2.div.table.tbody.findAll("tr")
                     for row in rows:
                         info = row.findAll("td")
-                        history.append ({
-                            "date" : info[0].get_text(),
-                            "status" : info[1].get_text(),
-                            "price" : info[2].get_text()
-                        })
+                        if len(info) >= 3:
+                            history.append ({
+                                "date" : info[0].get_text(),
+                                "status" : info[1].get_text(),
+                                "price" : info[2].get_text()
+                            })
+                        else:
+                            print("History not found")
+                            print (info)
         
                         
             schools = []
