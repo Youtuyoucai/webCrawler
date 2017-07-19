@@ -113,7 +113,7 @@ def getExactAddress(searchString):
         
             
 
-def getSurroundingValues(searchString):
+'''def getSurroundingValues(searchString):
     
     array = searchString.split('+')
     redfinString="https://www.google.com/#q="+searchString +"redfin"
@@ -155,7 +155,7 @@ def getSurroundingValues(searchString):
         for url in urls:
             driver.get(url)
     
-    
+ '''   
 def search_top(search_string, array, site):
     def tryPath(xpath):
             try:
@@ -200,9 +200,9 @@ def search_top(search_string, array, site):
         if site == 0:
             #redfin
             try:
+                print("waiting for redfin")
                 element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[5]/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div")))
-                print("waiting for redfin")
             finally:
                 print("Found")
                 addressInfo['type'] = 'redfin'
