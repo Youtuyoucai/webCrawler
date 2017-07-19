@@ -190,6 +190,8 @@ def search_top(search_string, array, site):
                         addressInfo["Schools"] = schools
                 except (AttributeError):
                     pass
+                driver.service.process.send_signal(signal.SIGTERM)
+                driver.quit()
                 return addressInfo
 
         elif site == 1:
@@ -198,6 +200,8 @@ def search_top(search_string, array, site):
                 element = WebDriverWait(driver, 25).until(
                 EC.presence_of_element_located((By.ID, "hdp-content")))
             except:
+                driver.service.process.send_signal(signal.SIGTERM)
+                driver.quit()
                 return False
             finally:
                 print("Found")
@@ -278,13 +282,16 @@ def search_top(search_string, array, site):
                 "History" : history if len(history) > 1 else [],
                 "Schools" : schools if len(schools) > 1 else []
             }
+            driver.service.process.send_signal(signal.SIGTERM)
+            driver.quit()
             return addressInfo
 
         else: 
+            driver.service.process.send_signal(signal.SIGTERM)
+            driver.quit()
             return False
         
-    driver.service.process.send_signal(signal.SIGTERM)
-    driver.quit()
+    
 
 
 driver = webdriver.PhantomJS('./linux/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
