@@ -145,6 +145,8 @@ def search_top(search_string, array, site):
                   
                 
                 sibling5 = bsObj.find("div", {"class": "walk-score"})
+                addressInfo["walk_score"] = 0
+                addressInfo["transit_score"] = 0
                 if sibling5:
                     percentages = sibling5.div.findAll("div", {"class":"percentage"})
                     if len(percentages) > 0:
