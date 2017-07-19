@@ -89,7 +89,7 @@ def is_number(s):
         
             
 def search_top(search_string, array, site):
-    driver = webdriver.PhantomJS('./linux/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
+    driver = webdriver.PhantomJS('./mac/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
     def tryPath(xpath):
             try:
                 item = driver.find_element(By.XPATH, xpath)
@@ -165,9 +165,10 @@ def search_top(search_string, array, site):
                             "status" : status,
                             "price" : price
                         })
-                    addressInfo["History"] = history
                 except (AttributeError):
                     pass
+                addressInfo["History"] = history
+                
                 schools = []
                 try:
                     sibling7 = bsObj.find("section", {"class" : "SchoolsSection"}).find("div", {"class" : "main-content"}).find("div", {"class": "schools-content"}).div.table.tbody.findAll("tr")
