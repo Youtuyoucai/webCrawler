@@ -262,7 +262,6 @@ def getPrice():
     #result = search_top(zillowString, array, 1)
     zillow = search_top(zillowString, array, 1)
     redfin = search_top(redfinString, array, 0)
-    driver.close()
     if redfin:
         if zillow:
             if "History" not in redfin.keys(): 
