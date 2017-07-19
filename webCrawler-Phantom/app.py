@@ -150,7 +150,6 @@ def search_top(search_string, array, site):
                     if len(percentages) > 1:
                         addressInfo["transit_score"] = percentages[1].get_text()
                 
-                driver.close()
                 return addressInfo
 
         elif site == 1:
@@ -159,7 +158,6 @@ def search_top(search_string, array, site):
                 element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.ID, "hdp-content")))
             except:
-                driver.close()
                 return False
             finally:
                 print("Found")
@@ -237,7 +235,6 @@ def search_top(search_string, array, site):
                 "History" : history,
                 "Schools" : schools
             }
-            driver.close()
             return addressInfo
 
         else: 
@@ -265,6 +262,7 @@ def getPrice():
     #result = search_top(zillowString, array, 1)
     zillow = search_top(zillowString, array, 1)
     redfin = search_top(redfinString, array, 0)
+    driver.close()
     if redfin:
         if zillow:
             redfin["History"] = zillow["History"]
