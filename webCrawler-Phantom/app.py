@@ -285,49 +285,32 @@ def search_top(search_string, array, site):
 
 driver = webdriver.PhantomJS('./linux/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
 
-@app.route('/getinfo', methods=['POST'])
+@app.route('/getredfin', methods=['POST'])
 def getPrice():
     address = request.json.get('address').lower()
- 
     array = address.split()
     searchString = ""
-    
     for word in array:
         searchString+=word 
         searchString+="+"
-        
-    
-    
+
     redfinString="https://www.google.com/#q="+searchString +"redfin"
     zillowString="https://www.google.com/#q="+searchString +"zillow"
-    
-    #result = search_top(zillowString, array, 1)
-    
     redfinInfo = search_top(redfinString, array, 0)
-    if (redfinInfo != False):
-        if "History" not in redfinInfo.keys(): 
-            print("none")
-            zillowInfo = search_top(zillowString, array, 1) 
-            if (zillowInfo != False):
-                redfinInfo["History"] = zillowInfo["History"]
-            else :
-                redfinInfo["History"] = []
-        if "Schools" not in redfinInfo.keys(): 
-            print("none")
-            zillowInfo = search_top(zillowString, array, 1) 
-            if (zillowInfo != False):
-                redfinInfo["Schools"] = zillowInfo["Schools"]
-            else:
-                redfinInfo["Schools"] = []
-        return(jsonify(redfinInfo))
-    else:
-        zillowInfo = search_top(zillowString, array, 1) 
-        if (zillowInfo != False):
-            return(jsonify(zillowInfo))
-        else:
-            #value house from nearby houses
-            #exactAddress = getExactAddress(searchString)
-            return("Address Not Found")
+    return jsonify(redfinInfo)
+
+@app.route('/getzillow', methods=['POST'])
+def getPrice():
+    address = request.json.get('address').lower()
+    array = address.split()
+    searchString = ""
+    for word in array:
+        searchString+=word 
+        searchString+="+"
+
+    zillowString="https://www.google.com/#q="+searchString +"zillow"
+    zillowInfo = search_top(zillowString, array, 1) 
+    return jsonify(zillowInfo)
             
             
            
