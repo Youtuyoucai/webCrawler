@@ -26,6 +26,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import string
 import requests
 import json
+import signal
 
 app = Flask(__name__)
 
@@ -281,6 +282,9 @@ def search_top(search_string, array, site):
 
         else: 
             return False
+        
+    driver.service.process.send_signal(signal.SIGTERM)
+    driver.quit()
 
 
 driver = webdriver.PhantomJS('./linux/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
