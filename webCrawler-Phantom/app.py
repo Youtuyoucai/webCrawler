@@ -221,84 +221,88 @@ def search_top(search_string, array, site):
                 return addressInfo
 
         elif site == 1:
-            estimate = "Price Unknown"
-            rentEstimate = "Price Unknown"
-            #zillow
-            
-            sibling = bsObj.findAll("div", { "class" : "home-summary-row" })
-            for item in sibling:
-                if '  Zestimate' in item.get_text():
-                    if len(item.get_text().split('$')) >= 2:
-                        estimate = item.get_text().split('$')[1]
-                if 'Rent Zestimate' in item.get_text():
-                    if len(item.get_text().split('$')) >= 2:
-                        rentEstimate = item.get_text().split('$')[1]
-            
-            sibling1 = bsObj.findAll("span", { "class" : "addr_bbs" })
-            sibling2 = bsObj.findAll("div", { "class" : "hdp-fact-ataglance-value" })
-            
-            history = []
-            sibling3 = bsObj.findAll("section", {"class" : "zsg-content-section"})
-            for item in sibling3:
-                item2 = item.find("div", {"id" : "hdp-price-history"})
-                if (item2):
-                    rows = item2.div.table.tbody.findAll("tr")
-                    for row in rows:
-                        info = row.findAll("td")
-                        if len(info) >= 3:
-                            history.append ({
-                                "date" : info[0].get_text(),
-                                "status" : info[1].get_text(),
-                                "price" : info[2].get_text()
-                            })
-                        
-        
-                        
-            schools = []
-            sibling4 = bsObj.findAll("section", {"id" : "nearbySchools"})
-            for item in sibling4:
-                item2 = item.div.findAll("div", {"class" : "zsg-content-item"})
-                for content in item2:
-                    ul = content.findAll("ul", {"class" : "nearby-schools-list"})
-                    for lists in ul:
-                        listItems = lists.findAll("li", {"class":"nearby-school"})
-                        for listItem in listItems:
-                            rating = listItem.find("div", {"class":"nearby-schools-rating"}).span.get_text()
-                            name = listItem.find("div", {"class":"nearby-schools-name"}).a.get_text()
-                            grades = listItem.find("div", {"class":"nearby-schools-grades"}).get_text()
-                            distance = listItem.find("div", {"class":"nearby-schools-distance"}).get_text()
-                            schools.append({
-                                "name": name,
-                                "distance": distance,
-                                "grades": grades,
-                                "rating": rating
-                            })
+            try:
+                element = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//*[@id='yui_3_18_1_2_1500426697797_940']")))
+            finally:
+                estimate = "Price Unknown"
+                rentEstimate = "Price Unknown"
+                #zillow
 
-                        
+                sibling = bsObj.findAll("div", { "class" : "home-summary-row" })
+                for item in sibling:
+                    if '  Zestimate' in item.get_text():
+                        if len(item.get_text().split('$')) >= 2:
+                            estimate = item.get_text().split('$')[1]
+                    if 'Rent Zestimate' in item.get_text():
+                        if len(item.get_text().split('$')) >= 2:
+                            rentEstimate = item.get_text().split('$')[1]
 
-                    
-            
-        addressInfo = {
-            'type': 'zillow',
-            'estimate':estimate,
-            'rentEstimate':rentEstimate,
-            'beds': sibling1[0].get_text() if sibling1 else None,
-            'baths':sibling1[1].get_text() if sibling1 else None,
-            'sqft': sibling1[2].get_text() if sibling1 else None,
-            "yearBuilt": sibling2[1].get_text() if sibling2 else None,
-            "type": sibling2[0].get_text() if sibling2 else None,
-            "yearBuilt": sibling2[1].get_text() if sibling2 else None,
-            "Heating": sibling2[2].get_text() if sibling2 else None,
-            "Cooling": sibling2[3].get_text() if sibling2 else None,
-            "Parking": sibling2[4].get_text() if sibling2 else None,
-            "Lot": sibling2[5].get_text() if sibling2 else None,
-            "History" : history,
-            "Schools" : schools
-        }
-        return addressInfo
-   
-    else: 
-        return False
+                sibling1 = bsObj.findAll("span", { "class" : "addr_bbs" })
+                sibling2 = bsObj.findAll("div", { "class" : "hdp-fact-ataglance-value" })
+
+                history = []
+                sibling3 = bsObj.findAll("section", {"class" : "zsg-content-section"})
+                for item in sibling3:
+                    item2 = item.find("div", {"id" : "hdp-price-history"})
+                    if (item2):
+                        rows = item2.div.table.tbody.findAll("tr")
+                        for row in rows:
+                            info = row.findAll("td")
+                            if len(info) >= 3:
+                                history.append ({
+                                    "date" : info[0].get_text(),
+                                    "status" : info[1].get_text(),
+                                    "price" : info[2].get_text()
+                                })
+
+
+
+                schools = []
+                sibling4 = bsObj.findAll("section", {"id" : "nearbySchools"})
+                for item in sibling4:
+                    item2 = item.div.findAll("div", {"class" : "zsg-content-item"})
+                    for content in item2:
+                        ul = content.findAll("ul", {"class" : "nearby-schools-list"})
+                        for lists in ul:
+                            listItems = lists.findAll("li", {"class":"nearby-school"})
+                            for listItem in listItems:
+                                rating = listItem.find("div", {"class":"nearby-schools-rating"}).span.get_text()
+                                name = listItem.find("div", {"class":"nearby-schools-name"}).a.get_text()
+                                grades = listItem.find("div", {"class":"nearby-schools-grades"}).get_text()
+                                distance = listItem.find("div", {"class":"nearby-schools-distance"}).get_text()
+                                schools.append({
+                                    "name": name,
+                                    "distance": distance,
+                                    "grades": grades,
+                                    "rating": rating
+                                })
+
+
+
+
+
+            addressInfo = {
+                'type': 'zillow',
+                'estimate':estimate,
+                'rentEstimate':rentEstimate,
+                'beds': sibling1[0].get_text() if sibling1 else None,
+                'baths':sibling1[1].get_text() if sibling1 else None,
+                'sqft': sibling1[2].get_text() if sibling1 else None,
+                "yearBuilt": sibling2[1].get_text() if sibling2 else None,
+                "type": sibling2[0].get_text() if sibling2 else None,
+                "yearBuilt": sibling2[1].get_text() if sibling2 else None,
+                "Heating": sibling2[2].get_text() if sibling2 else None,
+                "Cooling": sibling2[3].get_text() if sibling2 else None,
+                "Parking": sibling2[4].get_text() if sibling2 else None,
+                "Lot": sibling2[5].get_text() if sibling2 else None,
+                "History" : history,
+                "Schools" : schools
+            }
+            return addressInfo
+
+        else: 
+            return False
 
 
 driver = webdriver.PhantomJS('./linux/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
