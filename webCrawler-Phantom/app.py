@@ -150,39 +150,45 @@ def search_top(search_string, array, site):
                     if len(percentages) > 1:
                         addressInfo["transit_score"] = percentages[1].get_text()
                 history = [] 
-                sibling6 = bsObj.find("section", {"class" : "PropertyHistory"}).find("div", {"class" : "main-content"}).div.table.tbody
-                rows = sibling6.findAll("tr", {"class": "PropertyHistoryEventRow"})
-                for row in rows:
-                    section = row.findAll("td")
-                    date = section[0].get_text()
-                    status = section[1].get_text()
-                    price = section[2].get_text()
-                    history.append({
-                        "date" : date,
-                        "status" : status,
-                        "price" : price
-                    })
-                addressInfo["History"] = history
-                schools = []
-                sibling7 = bsObj.find("section", {"class" : "SchoolsSection"}).find("div", {"class" : "main-content"}).find("div", {"class": "schools-content"}).div.table.tbody.findAll("tr")
-                for item in sibling7:
-                    infos = item.findAll("td", {"class" : "name-col"})
-                    for info in infos:
-                        #print info
-                        rating = info.find("div", {"class": "rating"}).div.get_text()
-                        name = info.find("div", {"class": "name-and-info"}).a.get_text()
-                        schoolInfo = info.find("div", {"class": "name-and-info"}).div
-                        
-                        
-                        infoArray = schoolInfo.get_text().split(" — ")
-                        infoText = infoArray[0] + " " + infoArray[1]
-                        schools.append({
-                            "name" : name,
-                            "info": infoText,
-                            "rating": rating
+                try:
+                    sibling6 = bsObj.find("section", {"class" : "PropertyHistory"}).find("div", {"class" : "main-content"}).div.table.tbody
+                    rows = sibling6.findAll("tr", {"class": "PropertyHistoryEventRow"})
+                    for row in rows:
+                        section = row.findAll("td")
+                        date = section[0].get_text()
+                        status = section[1].get_text()
+                        price = section[2].get_text()
+                        history.append({
+                            "date" : date,
+                            "status" : status,
+                            "price" : price
                         })
-                
-                    addressInfo["Schools"] = schools
+                    addressInfo["History"] = history
+                except (AttributeError):
+                    pass
+                schools = []
+                try:
+                    sibling7 = bsObj.find("section", {"class" : "SchoolsSection"}).find("div", {"class" : "main-content"}).find("div", {"class": "schools-content"}).div.table.tbody.findAll("tr")
+                    for item in sibling7:
+                        infos = item.findAll("td", {"class" : "name-col"})
+                        for info in infos:
+                            #print info
+                            rating = info.find("div", {"class": "rating"}).div.get_text()
+                            name = info.find("div", {"class": "name-and-info"}).a.get_text()
+                            schoolInfo = info.find("div", {"class": "name-and-info"}).div
+
+
+                            infoArray = schoolInfo.get_text().split(" — ")
+                            infoText = infoArray[0] + " " + infoArray[1]
+                            schools.append({
+                                "name" : name,
+                                "info": infoText,
+                                "rating": rating
+                            })
+
+                        addressInfo["Schools"] = schools
+                except (AttributeError):
+                    pass
                 return addressInfo
 
         elif site == 1:
@@ -210,49 +216,54 @@ def search_top(search_string, array, site):
                 sibling2 = bsObj.findAll("div", { "class" : "hdp-fact-ataglance-value" })
 
                 history = []
-                sibling3 = bsObj.findAll("section", {"class" : "zsg-content-section"})
-                for item in sibling3:
-                    item2 = item.find("div", {"id" : "hdp-price-history"})
-                    if (item2):
-                        rows = item2.div.table.tbody.findAll("tr")
-                        for row in rows:
-                            info = row.findAll("td")
-                            if len(info) >= 3:
-                                history.append ({
-                                    "date" : info[0].get_text(),
-                                    "status" : info[1].get_text(),
-                                    "price" : info[2].get_text()
-                                })
+                try:
+                    sibling3 = bsObj.findAll("section", {"class" : "zsg-content-section"})
+                    for item in sibling3:
+                        item2 = item.find("div", {"id" : "hdp-price-history"})
+                        if (item2):
+                            rows = item2.div.table.tbody.findAll("tr")
+                            for row in rows:
+                                info = row.findAll("td")
+                                if len(info) >= 3:
+                                    history.append ({
+                                        "date" : info[0].get_text(),
+                                        "status" : info[1].get_text(),
+                                        "price" : info[2].get_text()
+                                    })
+                except:
+                    history.append ({})
 
 
 
                 schools = []
-                sibling4 = bsObj.findAll("section", {"id" : "nearbySchools"})
-                for item in sibling4:
-                    item2 = item.div.findAll("div", {"class" : "zsg-content-item"})
-                    for content in item2:
-                        ul = content.findAll("ul", {"class" : "nearby-schools-list"})
-                        for lists in ul:
-                            listItems = lists.findAll("li", {"class":"nearby-school"})
-                            for listItem in listItems:
-                                rating = listItem.find("div", {"class":"nearby-schools-rating"}).span.get_text()
-                                name = listItem.find("div", {"class":"nearby-schools-name"}).a.get_text()
-                                grades = listItem.find("div", {"class":"nearby-schools-grades"}).get_text()
-                                distance = listItem.find("div", {"class":"nearby-schools-distance"}).get_text()
-                                schools.append({
-                                    "name": name,
-                                    "info": distance + " - " + grades,
-                                    "rating": rating
-                                })
-
+                try:
+                    sibling4 = bsObj.findAll("section", {"id" : "nearbySchools"})
+                    for item in sibling4:
+                        item2 = item.div.findAll("div", {"class" : "zsg-content-item"})
+                        for content in item2:
+                            ul = content.findAll("ul", {"class" : "nearby-schools-list"})
+                            for lists in ul:
+                                listItems = lists.findAll("li", {"class":"nearby-school"})
+                                for listItem in listItems:
+                                    rating = listItem.find("div", {"class":"nearby-schools-rating"}).span.get_text()
+                                    name = listItem.find("div", {"class":"nearby-schools-name"}).a.get_text()
+                                    grades = listItem.find("div", {"class":"nearby-schools-grades"}).get_text()
+                                    distance = listItem.find("div", {"class":"nearby-schools-distance"}).get_text()
+                                    schools.append({
+                                        "name": name,
+                                        "info": distance + " - " + grades,
+                                        "rating": rating
+                                    })
+                except: 
+                     schools.append({})
 
 
 
 
             addressInfo = {
                 'type': 'zillow',
-                'estimate':estimate,
-                'rentEstimate':rentEstimate,
+                'estimate':estimate if estimate else None,
+                'rentEstimate':rentEstimate if rentEstimate else None,
                 'beds': sibling1[0].get_text() if sibling1 else None,
                 'baths':sibling1[1].get_text() if sibling1 else None,
                 'sqft': sibling1[2].get_text() if sibling1 else None,
