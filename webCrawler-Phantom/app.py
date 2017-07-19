@@ -149,7 +149,40 @@ def search_top(search_string, array, site):
                         addressInfo["walk_score"] = percentages[0].get_text()
                     if len(percentages) > 1:
                         addressInfo["transit_score"] = percentages[1].get_text()
+                history = [] 
+                sibling6 = bsObj.find("section", {"class" : "PropertyHistory"}).find("div", {"class" : "main-content"}).div.table.tbody
+                rows = sibling6.findAll("tr", {"class": "PropertyHistoryEventRow"})
+                for row in rows:
+                    section = row.findAll("td")
+                    date = section[0].get_text()
+                    status = section[1].get_text()
+                    price = section[2].get_text()
+                    history.append({
+                        "date" : date,
+                        "status" : status,
+                        "price" : price
+                    })
+                addressInfo["History"] = history
+                schools = []
+                sibling7 = bsObj.find("section", {"class" : "SchoolsSection"}).find("div", {"class" : "main-content"}).find("div", {"class": "schools-content"}).div.table.tbody.findAll("tr")
+                for item in sibling7:
+                    infos = item.findAll("td", {"class" : "name-col"})
+                    for info in infos:
+                        #print info
+                        rating = info.find("div", {"class": "rating"}).div.get_text()
+                        name = info.find("div", {"class": "name-and-info"}).a.get_text()
+                        schoolInfo = info.find("div", {"class": "name-and-info"}).div
+                        
+                        
+                        infoArray = schoolInfo.get_text().split(" — ")
+                        infoText = infoArray[0] + " " + infoArray[1]
+                        schools.append({
+                            "name" : name,
+                            "info": infoText,
+                            "rating": rating
+                        })
                 
+                    addressInfo["Schools"] = schools
                 return addressInfo
 
         elif site == 1:
@@ -164,7 +197,6 @@ def search_top(search_string, array, site):
                 estimate = "Price Unknown"
                 rentEstimate = "Price Unknown"
                 #zillow
-
                 sibling = bsObj.findAll("div", { "class" : "home-summary-row" })
                 for item in sibling:
                     if '  Zestimate' in item.get_text():
@@ -209,8 +241,7 @@ def search_top(search_string, array, site):
                                 distance = listItem.find("div", {"class":"nearby-schools-distance"}).get_text()
                                 schools.append({
                                     "name": name,
-                                    "distance": distance,
-                                    "grades": grades,
+                                    "info": distance + " - " + grades,
                                     "rating": rating
                                 })
 
@@ -241,7 +272,7 @@ def search_top(search_string, array, site):
             return False
 
 
-driver = webdriver.PhantomJS('./linux/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
+driver = webdriver.PhantomJS('./mac/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
 
 @app.route('/getinfo', methods=['POST'])
 def getPrice():
@@ -260,17 +291,22 @@ def getPrice():
     zillowString="https://www.google.com/#q="+searchString +"zillow"
     
     #result = search_top(zillowString, array, 1)
-    zillow = search_top(zillowString, array, 1)
-    redfin = search_top(redfinString, array, 0)
-    if redfin:
-        if zillow:
-            if "History" not in redfin.keys(): 
-                redfin["History"] = zillow["History"]
-                redfin["Schools"] = zillow["Schools"]
-        return(jsonify(redfin))
+    
+    redfinInfo = search_top(redfinString, array, 0)
+    if redfinInfo:
+        if "History" not in redfinInfo.keys(): 
+            zillowInfo = search_top(zillowString, array, 1) 
+            if zillowInfo:
+                redfinInfo["History"] = zillowInfo["History"]
+        if "Schools" not in redfinInfo.keys(): 
+            zillowInfo = search_top(zillowString, array, 1) 
+            if zillowInfo:
+                redfinInfo["Schools"] = zillowInfo["Schools"]
+        return(jsonify(redfinInfo))
     else:
-        if zillow:
-            return(jsonify(zillow))
+        zillowInfo = search_top(zillowString, array, 1) 
+        if zillowInfo:
+            return(jsonify(zillowInfo))
         else:
             #value house from nearby houses
             #exactAddress = getExactAddress(searchString)
