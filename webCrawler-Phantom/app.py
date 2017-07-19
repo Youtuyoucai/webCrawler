@@ -297,7 +297,12 @@ def getRedfin():
     redfinString="https://www.google.com/#q="+searchString +"redfin"
     zillowString="https://www.google.com/#q="+searchString +"zillow"
     redfinInfo = search_top(redfinString, array, 0)
-    return jsonify(redfinInfo)
+    if redfinInfo != False:
+        return jsonify(redfinInfo)
+    else:
+        return jsonify({
+            "Error" : "Address Not Found"
+        })
 
 @app.route('/getzillow', methods=['POST'])
 def getZillow():
@@ -310,7 +315,12 @@ def getZillow():
 
     zillowString="https://www.google.com/#q="+searchString +"zillow"
     zillowInfo = search_top(zillowString, array, 1) 
-    return jsonify(zillowInfo)
+    if zillowInfo != False:
+        return jsonify(zillowInfo)
+    else:
+        return jsonify({
+            "Error" : "Address Not Found"
+        })
             
             
            
