@@ -85,77 +85,8 @@ def is_number(s):
         return True
     except ValueError:
         return False
-    
-def getExactAddress(searchString):
-    gmapresult = requests.get("http://maps.googleapis.com/maps/api/geocode/json?address="+searchString).text
-    jdata = json.loads(gmapresult)
-    status = jdata.get('status')
-    if (status == "OK"):
-        results = jdata.get('results')
-        result = results[0]
-        geography = result['geometry']
-        location = geography["location"]
-        lat = repr(location["lat"])
-        lng = repr(location["lng"])
-        requrl = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key=AIzaSyBNphpzmEaN30wVqQnOKYf0ATlXcnyDzX0"
-        addresult = requests.get(requrl).text
-        jdata = json.loads(addresult)
-        results = jdata.get('results')
-        for item in results:
-            types = item.get('types')
-            if "premise" in types:
-                return item.get('formatted_address')
-                
-    elif (status == "ZERO_RESULTS"):
-        return "Address non-existent in Google Maps"
-    else:
-        return "Google Maps " + status
         
             
-
-'''def getSurroundingValues(searchString):
-    
-    array = searchString.split('+')
-    redfinString="https://www.google.com/#q="+searchString +"redfin"
-    driver.get(redfinString)
-    source = driver.page_source
-    bsObj = BeautifulSoup(source, "lxml")
-    #urls for nearby properties
-    sibling = bsObj.findAll("h3", { "class" : "r" })
-    
-    if len(sibling) >= 1:
-        link = sibling[0].a['href']
-        link
-    else:
-        return 'search not found'
-
-    correct_link = True
-
-    #check if correct link
-    for word in array:
-        if is_number(word) == True:
-            if word in link:
-                correct_link = True
-            else:
-                correct_link = False
-                break
-
-    if correct_link == True:
-
-        count = 0
-        driver.get(link)
-        source = driver.page_source
-        bsObj = BeautifulSoup(source, "lxml")
-        sibling = bsObj.findAll("a", { "class" : "nearby-home-address" })
-        urls = []
-        while count < 1:
-            for item in sibling:
-                urls.append("redfin.com"+item["href"])
-                count += 1
-        for url in urls:
-            driver.get(url)
-    
- '''   
 def search_top(search_string, array, site):
     def tryPath(xpath):
             try:
@@ -219,7 +150,7 @@ def search_top(search_string, array, site):
                     if len(percentages) > 1:
                         addressInfo["transit_score"] = percentages[1].get_text()
                 
-                
+                driver.close()
                 return addressInfo
 
         elif site == 1:
@@ -306,6 +237,7 @@ def search_top(search_string, array, site):
                 "History" : history,
                 "Schools" : schools
             }
+            driver.close()
             return addressInfo
 
         else: 
