@@ -228,6 +228,7 @@ def search_top(search_string, array, site):
                 element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.ID, "hdp-content")))
             except (TimeoutException):
+                driver.close()
                 return False
             finally:
                 print("Found")
