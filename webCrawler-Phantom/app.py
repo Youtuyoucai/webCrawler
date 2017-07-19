@@ -266,9 +266,8 @@ def getPrice():
     if redfin:
         if zillow:
             if "History" not in redfin.keys(): 
-                try:
-                    redfin["History"] = zillow["History"]
-                    redfin["Schools"] = zillow["Schools"]
+                redfin["History"] = zillow["History"]
+                redfin["Schools"] = zillow["Schools"]
         return(jsonify(redfin))
     else:
         if zillow:
