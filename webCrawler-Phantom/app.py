@@ -202,7 +202,9 @@ def search_top(search_string, array, site):
             try:
                 element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[5]/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div")))
+                print("waiting for redfin")
             finally:
+                print("Found")
                 addressInfo['type'] = 'redfin'
                 for var, xpath in varAndXPath.iteritems():
                     item = tryPath(xpath)
@@ -222,9 +224,13 @@ def search_top(search_string, array, site):
 
         elif site == 1:
             try:
+                print("waiting for zillow")
                 element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.ID, "hdp-content")))
+            except (TimeoutException):
+                return False
             finally:
+                print("Found")
                 estimate = "Price Unknown"
                 rentEstimate = "Price Unknown"
                 #zillow
