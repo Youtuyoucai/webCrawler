@@ -214,11 +214,18 @@ def search_top(search_string, array, site):
                 for var, xpath in varAndXPath.iteritems():
                     item = tryPath(xpath)
                     addressInfo[var] = item 
-                    
-                sibling5
+                  
+                
+                sibling5 = bsObj.find("div", {"class": "walk-score"})
+                if sibling5:
+                    percentages = sibling5.div.findAll("div", {"class":"percentage"})
+                    if len(percentages) > 0:
+                        addressInfo["walk_score"] = percentages[0].get_text()
+                    if len(percentages) > 1:
+                        addressInfo["transit_score"] = percentages[1].get_text()
                 
                 
-                return jsonify(addressInfo)
+                return addressInfo
 
         elif site == 1:
             estimate = "Price Unknown"
@@ -242,6 +249,7 @@ def search_top(search_string, array, site):
             for item in sibling3:
                 item2 = item.find("div", {"id" : "hdp-price-history"})
                 if (item2):
+                    print item2
                     rows = item2.div.table.tbody.findAll("tr")
                     for row in rows:
                         info = row.findAll("td")
@@ -250,6 +258,7 @@ def search_top(search_string, array, site):
                             "status" : info[1].get_text(),
                             "price" : info[2].get_text()
                         })
+        
                         
             schools = []
             sibling4 = bsObj.findAll("section", {"id" : "nearbySchools"})
@@ -270,29 +279,30 @@ def search_top(search_string, array, site):
                                 "grades": grades,
                                 "rating": rating
                             })
-                            
+        print(schools) 
+        print(history)
                         
 
                     
             
-            addressInfo = {
-                'type': 'zillow',
-                'estimate':estimate,
-                'rentEstimate':rentEstimate,
-                'beds': sibling1[0].get_text() if sibling1 else None,
-                'baths':sibling1[1].get_text() if sibling1 else None,
-                'sqft': sibling1[2].get_text() if sibling1 else None,
-                "yearBuilt": sibling2[1].get_text() if sibling2 else None,
-                "type": sibling2[0].get_text() if sibling2 else None,
-                "yearBuilt": sibling2[1].get_text() if sibling2 else None,
-                "Heating": sibling2[2].get_text() if sibling2 else None,
-                "Cooling": sibling2[3].get_text() if sibling2 else None,
-                "Parking": sibling2[4].get_text() if sibling2 else None,
-                "Lot": sibling2[5].get_text() if sibling2 else None,
-                "History" : history,
-                "Schools" : schools
-            }
-            return jsonify(addressInfo)
+        addressInfo = {
+            'type': 'zillow',
+            'estimate':estimate,
+            'rentEstimate':rentEstimate,
+            'beds': sibling1[0].get_text() if sibling1 else None,
+            'baths':sibling1[1].get_text() if sibling1 else None,
+            'sqft': sibling1[2].get_text() if sibling1 else None,
+            "yearBuilt": sibling2[1].get_text() if sibling2 else None,
+            "type": sibling2[0].get_text() if sibling2 else None,
+            "yearBuilt": sibling2[1].get_text() if sibling2 else None,
+            "Heating": sibling2[2].get_text() if sibling2 else None,
+            "Cooling": sibling2[3].get_text() if sibling2 else None,
+            "Parking": sibling2[4].get_text() if sibling2 else None,
+            "Lot": sibling2[5].get_text() if sibling2 else None,
+            "History" : history,
+            "Schools" : schools
+        }
+        return addressInfo
    
     else: 
         #print('bad link')
@@ -317,14 +327,17 @@ def getPrice():
     redfinString="https://www.google.com/#q="+searchString +"redfin"
     zillowString="https://www.google.com/#q="+searchString +"zillow"
     
-    result = search_top(zillowString, array, 1)
-    #result = search_top(redfinString, array, 0)
-    if result != False:
-        return(result)
+    #result = search_top(zillowString, array, 1)
+    redfin = search_top(redfinString, array, 0)
+    zillow = search_top(zillowString, array, 1)
+    if redfin:
+        if zillow:
+            redfin["History"] = zillow["History"]
+            redfin["Schools"] = zillow["Schools"]
+        return(jsonify(redfin))
     else:
-        zresult = search_top(zillowString, array, 1)
-        if zresult != False:
-            return(zresult)
+        if zillow:
+            return(jsonify(zillow))
         else:
             #value house from nearby houses
             #exactAddress = getExactAddress(searchString)
