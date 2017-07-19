@@ -117,7 +117,6 @@ def getSurroundingValues(searchString):
     
     array = searchString.split('+')
     redfinString="https://www.google.com/#q="+searchString +"redfin"
-    print(redfinString)
     driver.get(redfinString)
     source = driver.page_source
     bsObj = BeautifulSoup(source, "lxml")
@@ -126,7 +125,6 @@ def getSurroundingValues(searchString):
     
     if len(sibling) >= 1:
         link = sibling[0].a['href']
-        print(link)
         link
     else:
         return 'search not found'
@@ -140,15 +138,12 @@ def getSurroundingValues(searchString):
                 correct_link = True
             else:
                 correct_link = False
-                print word
                 break
 
     if correct_link == True:
-        print(link)
-        print('correct')
+
         count = 0
         driver.get(link)
-        #print('good link')
         source = driver.page_source
         bsObj = BeautifulSoup(source, "lxml")
         sibling = bsObj.findAll("a", { "class" : "nearby-home-address" })
@@ -199,14 +194,12 @@ def search_top(search_string, array, site):
 
     if correct_link == True:
         driver.get(link)
-        #print('good link')
         source = driver.page_source
         bsObj = BeautifulSoup(source, "lxml")
 
         if site == 0:
             #redfin
             try:
-                #print('waiting')
                 element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[5]/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div")))
             finally:
@@ -249,7 +242,6 @@ def search_top(search_string, array, site):
             for item in sibling3:
                 item2 = item.find("div", {"id" : "hdp-price-history"})
                 if (item2):
-                    print item2
                     rows = item2.div.table.tbody.findAll("tr")
                     for row in rows:
                         info = row.findAll("td")
@@ -259,9 +251,7 @@ def search_top(search_string, array, site):
                                 "status" : info[1].get_text(),
                                 "price" : info[2].get_text()
                             })
-                        else:
-                            print("History not found")
-                            print (info)
+                        
         
                         
             schools = []
@@ -308,7 +298,6 @@ def search_top(search_string, array, site):
         return addressInfo
    
     else: 
-        #print('bad link')
         return False
 
 
