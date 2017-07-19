@@ -169,7 +169,7 @@ def search_top(search_string, array, site):
                         })
                 except (AttributeError):
                     pass
-                addressInfo["History"] = history
+                addressInfo["history"] = history
                 
                 schools = []
                 try:
@@ -193,7 +193,7 @@ def search_top(search_string, array, site):
                 except (AttributeError):
                     pass
 
-                addressInfo["Schools"] = schools
+                addressInfo["schools"] = schools
                 
                 driver.service.process.send_signal(signal.SIGTERM)
                 driver.quit()
@@ -284,8 +284,8 @@ def search_top(search_string, array, site):
                 "Cooling": sibling2[3].get_text() if sibling2 else None,
                 "Parking": sibling2[4].get_text() if sibling2 else None,
                 "Lot": sibling2[5].get_text() if sibling2 else None,
-                "History" : history if len(history) > 1 else [],
-                "Schools" : schools if len(schools) > 1 else []
+                "history" : history if len(history) > 1 else [],
+                "schools" : schools if len(schools) > 1 else []
             }
             driver.service.process.send_signal(signal.SIGTERM)
             driver.quit()
