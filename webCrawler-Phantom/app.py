@@ -132,7 +132,7 @@ def search_top(search_string, array, site):
             #redfin
             try:
                 print("waiting for redfin")
-                element = WebDriverWait(driver, 10).until(
+                element = WebDriverWait(driver, 25).until(
                 EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[5]/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div")))
             finally:
                 print("Found")
@@ -155,7 +155,7 @@ def search_top(search_string, array, site):
         elif site == 1:
             try:
                 print("waiting for zillow")
-                element = WebDriverWait(driver, 10).until(
+                element = WebDriverWait(driver, 25).until(
                 EC.presence_of_element_located((By.ID, "hdp-content")))
             except:
                 return False
