@@ -265,8 +265,10 @@ def getPrice():
     driver.close()
     if redfin:
         if zillow:
-            redfin["History"] = zillow["History"]
-            redfin["Schools"] = zillow["Schools"]
+            if "History" not in redfin.keys(): 
+                try:
+                    redfin["History"] = zillow["History"]
+                    redfin["Schools"] = zillow["Schools"]
         return(jsonify(redfin))
     else:
         if zillow:
