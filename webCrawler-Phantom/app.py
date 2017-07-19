@@ -306,10 +306,12 @@ def getPrice():
     redfinInfo = search_top(redfinString, array, 0)
     if (redfinInfo != False):
         if "History" not in redfinInfo.keys(): 
+            print("none")
             zillowInfo = search_top(zillowString, array, 1) 
             if (zillowInfo != False):
                 redfinInfo["History"] = zillowInfo["History"]
         if "Schools" not in redfinInfo.keys(): 
+            print("none")
             zillowInfo = search_top(zillowString, array, 1) 
             if (zillowInfo != False):
                 redfinInfo["Schools"] = zillowInfo["Schools"]
