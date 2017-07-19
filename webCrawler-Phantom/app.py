@@ -223,7 +223,7 @@ def search_top(search_string, array, site):
         elif site == 1:
             try:
                 element = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, "//*[@id='yui_3_18_1_2_1500426697797_940']")))
+                EC.presence_of_element_located((By.className, "zsg-content-section")))
             finally:
                 estimate = "Price Unknown"
                 rentEstimate = "Price Unknown"
