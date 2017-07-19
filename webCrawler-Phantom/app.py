@@ -293,19 +293,19 @@ def getPrice():
     #result = search_top(zillowString, array, 1)
     
     redfinInfo = search_top(redfinString, array, 0)
-    if redfinInfo:
+    if (redfinInfo != False):
         if "History" not in redfinInfo.keys(): 
             zillowInfo = search_top(zillowString, array, 1) 
-            if zillowInfo:
+            if (zillowInfo != False):
                 redfinInfo["History"] = zillowInfo["History"]
         if "Schools" not in redfinInfo.keys(): 
             zillowInfo = search_top(zillowString, array, 1) 
-            if zillowInfo:
+            if (zillowInfo != False):
                 redfinInfo["Schools"] = zillowInfo["Schools"]
         return(jsonify(redfinInfo))
     else:
         zillowInfo = search_top(zillowString, array, 1) 
-        if zillowInfo:
+        if (zillowInfo != False):
             return(jsonify(zillowInfo))
         else:
             #value house from nearby houses
