@@ -283,6 +283,7 @@ def search_top(search_string, array, site):
                                 "grades": grades,
                                 "rating": rating
                             })
+
                         
 
                     
