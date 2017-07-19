@@ -231,7 +231,7 @@ def search_top(search_string, array, site):
                                         "price" : info[2].get_text()
                                     })
                 except:
-                    history.append ({})
+                    pass
 
 
 
@@ -255,7 +255,7 @@ def search_top(search_string, array, site):
                                         "rating": rating
                                     })
                 except: 
-                     schools.append({})
+                     pass
 
 
 
@@ -274,8 +274,8 @@ def search_top(search_string, array, site):
                 "Cooling": sibling2[3].get_text() if sibling2 else None,
                 "Parking": sibling2[4].get_text() if sibling2 else None,
                 "Lot": sibling2[5].get_text() if sibling2 else None,
-                "History" : history,
-                "Schools" : schools
+                "History" : history if len(history) > 1 else [],
+                "Schools" : schools if len(schools) > 1 else []
             }
             return addressInfo
 
@@ -283,7 +283,7 @@ def search_top(search_string, array, site):
             return False
 
 
-driver = webdriver.PhantomJS('./linux/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
+driver = webdriver.PhantomJS('./mac/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
 
 @app.route('/getinfo', methods=['POST'])
 def getPrice():
@@ -310,11 +310,15 @@ def getPrice():
             zillowInfo = search_top(zillowString, array, 1) 
             if (zillowInfo != False):
                 redfinInfo["History"] = zillowInfo["History"]
+            else :
+                redfinInfo["History"] = []
         if "Schools" not in redfinInfo.keys(): 
             print("none")
             zillowInfo = search_top(zillowString, array, 1) 
             if (zillowInfo != False):
                 redfinInfo["Schools"] = zillowInfo["Schools"]
+            else:
+                redfinInfo["Schools"] = []
         return(jsonify(redfinInfo))
     else:
         zillowInfo = search_top(zillowString, array, 1) 
