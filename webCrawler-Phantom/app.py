@@ -222,7 +222,7 @@ def search_top(search_string, array, site):
 
         elif site == 1:
             try:
-                element = WebDriverWait(driver, 10).until(
+                element = WebDriverWait(driver, 15).until(
                 EC.presence_of_element_located((By.ID, "hdp-content")))
             finally:
                 estimate = "Price Unknown"
