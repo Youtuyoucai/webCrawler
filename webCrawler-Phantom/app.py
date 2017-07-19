@@ -187,10 +187,11 @@ def search_top(search_string, array, site):
                                 "info": infoText,
                                 "rating": rating
                             })
-
-                        addressInfo["Schools"] = schools
                 except (AttributeError):
                     pass
+
+                addressInfo["Schools"] = schools
+                
                 driver.service.process.send_signal(signal.SIGTERM)
                 driver.quit()
                 return addressInfo
