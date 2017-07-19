@@ -227,7 +227,7 @@ def search_top(search_string, array, site):
                 print("waiting for zillow")
                 element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.ID, "hdp-content")))
-            except (TimeoutException):
+            except:
                 driver.close()
                 return False
             finally:
