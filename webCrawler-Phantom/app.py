@@ -89,7 +89,10 @@ def is_number(s):
         
             
 def search_top(search_string, array, site):
-    driver = webdriver.PhantomJS('./linux/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
+    try: 
+         driver = webdriver.PhantomJS('./mac/phantomjs', desired_capabilities=caps)
+    except:
+        driver = webdriver.PhantomJS('./linux/phantomjs', desired_capabilities=caps)  # Optional argument, if not specified will search path.
     def tryPath(xpath):
             try:
                 item = driver.find_element(By.XPATH, xpath)
@@ -134,7 +137,7 @@ def search_top(search_string, array, site):
             #redfin
             try:
                 print("waiting for redfin")
-                element = WebDriverWait(driver, 25).until(
+                element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[5]/div[2]/div/div/div/div[2]/div[1]/h1/span/span[1]/span[1]")))
                 
                 print("Found")

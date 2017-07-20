@@ -1,22 +1,22 @@
-[INFO  - 2017-07-20T22:59:33.140Z] GhostDriver - Main - running on port 64503
-[INFO  - 2017-07-20T22:59:33.967Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1","webSecurityEnabled":true}
-[INFO  - 2017-07-20T22:59:33.967Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.customHeaders:  - {}
-[INFO  - 2017-07-20T22:59:33.967Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"},"phantomjs.page.settings.userAgent":"Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1"}
-[INFO  - 2017-07-20T22:59:33.967Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 18b1c2a0-6d9f-11e7-9d02-6f5b661543ae
-[ERROR - 2017-07-20T22:59:41.409Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500591581358
+[INFO  - 2017-07-20T23:09:43.304Z] GhostDriver - Main - running on port 50429
+[INFO  - 2017-07-20T23:09:43.789Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1","webSecurityEnabled":true}
+[INFO  - 2017-07-20T23:09:43.789Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.customHeaders:  - {}
+[INFO  - 2017-07-20T23:09:43.789Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"},"phantomjs.page.settings.userAgent":"Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1"}
+[INFO  - 2017-07-20T23:09:43.789Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 842c4c20-6da0-11e7-aece-0759a4880bbe
+[ERROR - 2017-07-20T23:09:52.899Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500592192852
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:41.571Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:09:53.065Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:41.571Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:09:53.065Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:41.571Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:09:53.065Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:41.571Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:09:53.065Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   s (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
@@ -27,37 +27,37 @@
   (anonymous function) (phantomjs://code/webelementlocator.js:230)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:44.302Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:09:55.844Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:44.302Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:09:55.844Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:44.303Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:09:55.844Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:44.303Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:09:55.844Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   o (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
   i (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:45.043Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500591584999
+[ERROR - 2017-07-20T23:09:56.596Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500592196557
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:45.206Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:09:56.753Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:45.206Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:09:56.753Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:45.206Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:09:56.753Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:45.206Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:09:56.753Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   s (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
@@ -68,37 +68,37 @@
   (anonymous function) (phantomjs://code/webelementlocator.js:230)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:47.554Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:09:59.135Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:47.554Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:09:59.135Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:47.554Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:09:59.136Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:47.554Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:09:59.136Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   o (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
   i (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:48.287Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500591588237
+[ERROR - 2017-07-20T23:09:59.854Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500592199810
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:48.446Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:10:00.013Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:48.446Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:00.013Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:48.446Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:10:00.013Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:48.446Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:00.013Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   s (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
@@ -109,37 +109,37 @@
   (anonymous function) (phantomjs://code/webelementlocator.js:230)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:50.764Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:10:02.369Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:50.764Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:02.370Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:50.764Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:10:02.370Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:50.764Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:02.370Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   o (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
   i (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:51.519Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500591591474
+[ERROR - 2017-07-20T23:10:03.117Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500592203073
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:51.678Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:10:03.273Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:51.678Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:03.273Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:51.678Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:10:03.274Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:51.678Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:03.274Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   s (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
@@ -150,37 +150,37 @@
   (anonymous function) (phantomjs://code/webelementlocator.js:230)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:53.950Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:10:05.603Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:53.950Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:05.603Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:53.950Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:10:05.603Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:53.950Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:05.603Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   o (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
   i (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:54.708Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500591594660
+[ERROR - 2017-07-20T23:10:06.353Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500592206314
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:54.875Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:10:06.513Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:54.875Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:06.513Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:54.875Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:10:06.513Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:54.875Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:06.513Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   s (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
@@ -191,37 +191,37 @@
   (anonymous function) (phantomjs://code/webelementlocator.js:230)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:57.217Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:10:08.826Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:57.217Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:08.826Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:57.217Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:10:08.827Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:57.217Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:08.827Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   o (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
   i (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:57.968Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500591597924
+[ERROR - 2017-07-20T23:10:09.572Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500592209530
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:58.134Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:10:09.748Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:58.134Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:09.748Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:58.134Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:10:09.748Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T22:59:58.134Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:09.748Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   s (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
@@ -232,37 +232,37 @@
   (anonymous function) (phantomjs://code/webelementlocator.js:230)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:00.455Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:10:12.155Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:00.455Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:12.155Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:00.455Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:10:12.155Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:00.455Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:12.155Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   o (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
   i (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:01.202Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500591601159
+[ERROR - 2017-07-20T23:10:12.902Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500592212861
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:01.361Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:10:13.067Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:01.361Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:13.067Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:01.361Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:10:13.067Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:01.361Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:13.067Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   s (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
@@ -273,37 +273,37 @@
   (anonymous function) (phantomjs://code/webelementlocator.js:230)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:03.694Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:10:15.550Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:03.694Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:15.550Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:03.694Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:10:15.550Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:03.695Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:15.550Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   o (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
   i (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:04.452Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500591604403
+[ERROR - 2017-07-20T23:10:16.303Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1500592216259
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:04.611Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:10:16.464Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:04.611Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:16.464Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:04.612Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:10:16.465Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:04.612Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:16.465Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   s (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
@@ -314,17 +314,17 @@
   (anonymous function) (phantomjs://code/webelementlocator.js:230)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:06.918Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
+[ERROR - 2017-07-20T23:10:18.816Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: %cerror%c: [%ccorvair.common.logging.capture%c] color: red color: black color: rgb(42,42,127) color: black Uncaught browser exception: Script error. at  line 0
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:06.918Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:18.816Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   error (:0)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:06.918Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
+[ERROR - 2017-07-20T23:10:18.816Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - msg: TypeError: null is not an object (evaluating 'u.style')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2017-07-20T23:00:06.918Z] Session [18b1c2a0-6d9f-11e7-9d02-6f5b661543ae] - page.onError - stack:
+[ERROR - 2017-07-20T23:10:18.816Z] Session [842c4c20-6da0-11e7-aece-0759a4880bbe] - page.onError - stack:
   value (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/SearchPage-tabletPage.92b16eaec40e08cace8b.bundle.js:18)
   (anonymous function) (:0)
   o (https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/en/vendor.81058e748ab41ccc52ca.bundle.js:12)
