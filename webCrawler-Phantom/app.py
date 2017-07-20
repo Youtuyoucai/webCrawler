@@ -303,7 +303,13 @@ def search_top(search_string, array, site):
 
 @app.route('/getredfin', methods=['POST'])
 def getRedfin():
-    address = request.json.get('address').lower()
+    try:
+        address = request.json.get('address').lower()
+    except:
+        return jsonify({
+            "error" : "Request Error"
+        })
+        
     array = address.split()
     searchString = ""
     for word in array:
