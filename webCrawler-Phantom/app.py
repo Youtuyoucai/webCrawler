@@ -136,6 +136,10 @@ def search_top(search_string, array, site):
                 print("waiting for redfin")
                 element = WebDriverWait(driver, 25).until(
                 EC.presence_of_element_located((By.XPATH, "//*[@id='content']/div[5]/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div")))
+            except:
+                driver.service.process.send_signal(signal.SIGTERM)
+                driver.quit()
+                return False
             finally:
                 print("Found")
                 addressInfo['type'] = 'redfin'
